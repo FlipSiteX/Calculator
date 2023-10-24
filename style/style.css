@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url("../fonts/ofont.ru_Montserrat.ttf");
+    src: url("../fonts/Calibri.ttf");
 }
 
 body {
@@ -45,13 +45,13 @@ body {
     text-align: end;
     padding-right: 20px;
     font-family: "Montserrat", sans-serif;
-    font-size: 66px;
+    font-size: 70px;
     border: 2px solid;
 }
 
 button {
     font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
+    font-size: 48px;
     transition: .1s;
 }
 
@@ -74,10 +74,36 @@ button:active {
     transition: .1s;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
     .main-block {
-        width: 370px;
-        height: 370px;
+        width: 600px;
+        height: 600px;
+    }
+    .output-panel {
+        font-size: 64px;
+    }
+    button {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 550px) {
+    .main-block {
+        width: 500px;
+        height: 500px;
+    }
+    .output-panel {
+        font-size: 54px;
+    }
+    button {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 430px) {
+    .main-block {
+        width: 380px;
+        height: 380px;
     }
     .output-panel {
         font-size: 48px;
