@@ -27,7 +27,10 @@ for (let i of operationBtns) {
         i.addEventListener('click', () => {
             if (/([+\-*/%().]\.)|(\.[+\-*/%().])/ig.test(outputPanelText.value)) {
                 outputPanelText.value = 'ошибка'
-            } else {
+            } else if (/(\+\+.*)|(\*\*\*.*)|(--.*)|(\/\/\/.*)|(%%.*)/ig.test(outputPanelText.value)) {
+                outputPanelText.value = 'ошибка'
+            }
+            else {
                 outputPanelText.value = eval(outputPanelText.value)
             }
         })
