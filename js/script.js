@@ -23,17 +23,6 @@ for (let i of operationBtns) {
         i.addEventListener('click', () => {
             outputPanelText.value = outputPanelText.value + '*'
         })
-    } else if (i.id === 'resultBtn') {
-        i.addEventListener('click', () => {
-            if (/([+\-*/%().]\.)|(\.[+\-*/%().])/ig.test(outputPanelText.value)) {
-                outputPanelText.value = 'ошибка'
-            } else if (/([\-+*/%][+\-/%).])|([\-+/%][+\-*/%).])/ig.test(outputPanelText.value)) {
-                outputPanelText.value = 'ошибка'
-            }
-            else {
-                outputPanelText.value = eval(outputPanelText.value)
-            }
-        })
     } else if (i.id === 'point') {
         i.addEventListener('click', () => {
             outputPanelText.value = outputPanelText.value + '.'
@@ -53,9 +42,18 @@ for (let i of operationBtns) {
                 lastBracket = '('
             }
         })
-    } else {
+    } else if (i.id === 'minus' || i.id === 'plus') {
         i.addEventListener('click', () => {
             outputPanelText.value = outputPanelText.value + i.textContent
+        })
+    } else {
+        i.addEventListener('click', () => {
+            try {
+                outputPanelText.value = eval(outputPanelText.value)
+            }
+            catch (error) {
+                outputPanelText.value = 'ошибочка'
+            }
         })
     }
 }
