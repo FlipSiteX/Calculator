@@ -27,11 +27,6 @@ for (let i of operationBtns) {
         i.addEventListener('click', () => {
             outputPanelText.value = outputPanelText.value + '.'
         })
-    }
-    else if (i.id === 'remainder') {
-        i.addEventListener('click', () => {
-            outputPanelText.value = outputPanelText.value + '%'
-        })
     } else if (i.id === 'brackets') {
         i.addEventListener('click', () => {
             if (lastBracket === '(') {
@@ -42,7 +37,7 @@ for (let i of operationBtns) {
                 lastBracket = '('
             }
         })
-    } else if (i.id === 'minus' || i.id === 'plus') {
+    } else if (i.id === 'minus' || i.id === 'plus' || i.id === 'remainder') {
         i.addEventListener('click', () => {
             outputPanelText.value = outputPanelText.value + i.textContent
         })
